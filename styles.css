@@ -7,7 +7,7 @@
   --line: #d9ddd8;
   --text: #34413b;
   --white: #ffffff;
-  --shadow: 0 18px 55px rgba(31, 54, 43, 0.12);
+  --shadow: 0 18px 55px rgba(31,54,43,.12);
 }
 
 * {
@@ -39,7 +39,7 @@ a {
 
 .container {
   width: min(1180px, calc(100% - 40px));
-  margin: 0 auto;
+  margin: auto;
 }
 
 
@@ -48,10 +48,10 @@ a {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 1000;
-  background: rgba(255, 253, 248, 0.94);
+  z-index: 100;
+  background: rgba(255,253,248,.93);
   backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(24, 32, 28, 0.08);
+  border-bottom: 1px solid rgba(24,32,28,.08);
 }
 
 .nav-wrap {
@@ -80,7 +80,7 @@ a {
 .brand-mark svg {
   width: 37px;
   height: 37px;
-  fill: white;
+  fill: var(--white);
 }
 
 .brand-copy {
@@ -91,15 +91,15 @@ a {
 
 .brand-copy strong {
   font: 800 25px/1 "Manrope", sans-serif;
-  letter-spacing: 0.06em;
+  letter-spacing: .06em;
   color: var(--ink);
 }
 
 .brand-copy small {
-  margin-top: 5px;
-  font-size: 9px;
-  letter-spacing: 0.18em;
   text-transform: uppercase;
+  font-size: 9px;
+  letter-spacing: .18em;
+  margin-top: 5px;
   color: #6f7b74;
 }
 
@@ -111,15 +111,11 @@ a {
   font-weight: 600;
 }
 
-.main-nav a:hover {
-  opacity: 0.7;
-}
-
 .nav-cta {
-  padding: 12px 17px;
-  border-radius: 8px;
   background: var(--forest);
   color: white !important;
+  padding: 12px 17px;
+  border-radius: 8px;
 }
 
 .menu-toggle {
@@ -135,38 +131,34 @@ a {
 
 .hero {
   padding: 76px 0 72px;
-  background: linear-gradient(
-    135deg,
-    #f7f4ed 0%,
-    #eef2ec 100%
-  );
+  background: linear-gradient(135deg,#f7f4ed 0%,#eef2ec 100%);
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.06fr 0.94fr;
+  grid-template-columns: 1.06fr .94fr;
   gap: 70px;
   align-items: center;
 }
 
 .eyebrow {
-  margin: 0 0 18px;
   font: 700 12px "Manrope", sans-serif;
-  letter-spacing: 0.16em;
+  letter-spacing: .16em;
   color: var(--sage);
+  margin: 0 0 18px;
 }
 
 .hero h1,
 .section h2 {
   font-family: "Manrope", sans-serif;
   color: var(--ink);
-  letter-spacing: -0.045em;
+  letter-spacing: -.045em;
 }
 
 .hero h1 {
-  margin: 0;
-  font-size: clamp(44px, 6vw, 76px);
+  font-size: clamp(44px,6vw,76px);
   line-height: 1.02;
+  margin: 0;
 }
 
 .hero h1 span {
@@ -174,8 +166,8 @@ a {
 }
 
 .hero-lead {
-  margin: 28px 0 30px;
   font-size: 19px;
+  margin: 28px 0 30px;
 }
 
 .hero-actions {
@@ -191,9 +183,9 @@ a {
   min-height: 50px;
   padding: 0 20px;
   border-radius: 8px;
+  font-weight: 700;
   border: 1px solid transparent;
   cursor: pointer;
-  font-weight: 700;
 }
 
 .button.primary {
@@ -215,7 +207,7 @@ a {
   font-weight: 600;
 }
 
-.trust-strip span::before {
+.trust-strip span:before {
   content: "✓";
   margin-right: 7px;
 }
@@ -224,20 +216,20 @@ a {
 /* HERO CARD */
 
 .hero-card {
-  min-height: 480px;
+  background: var(--forest);
+  color: white;
   padding: 30px;
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  min-height: 480px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: var(--forest);
-  color: white;
-  border-radius: 24px;
-  box-shadow: var(--shadow);
 }
 
 .hero-card-top {
   font: 700 11px "Manrope", sans-serif;
-  letter-spacing: 0.18em;
+  letter-spacing: .18em;
 }
 
 .property-visual {
@@ -259,11 +251,11 @@ a {
 .house-body {
   width: 210px;
   height: 120px;
-  padding: 25px;
+  background: #f5f2ea;
   display: flex;
   align-items: end;
   justify-content: space-around;
-  background: #f5f2ea;
+  padding: 25px;
 }
 
 .house-body span {
@@ -274,13 +266,13 @@ a {
 
 .hero-stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3,1fr);
   gap: 10px;
 }
 
 .hero-stats div {
+  border-top: 1px solid rgba(255,255,255,.25);
   padding-top: 13px;
-  border-top: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .hero-stats strong,
@@ -289,7 +281,7 @@ a {
 }
 
 
-/* GENERAL */
+/* GENERAL SECTIONS */
 
 .section {
   padding: 84px 0;
@@ -302,9 +294,9 @@ a {
 }
 
 .section h2 {
-  margin: 0;
-  font-size: clamp(34px, 4.4vw, 54px);
+  font-size: clamp(34px,4.4vw,54px);
   line-height: 1.08;
+  margin: 0;
 }
 
 .lead-copy {
@@ -316,11 +308,11 @@ a {
 }
 
 .section-heading-row {
-  margin-bottom: 30px;
   display: flex;
   justify-content: space-between;
-  align-items: end;
   gap: 40px;
+  align-items: end;
+  margin-bottom: 30px;
 }
 
 .section-heading-row h2 {
@@ -336,16 +328,16 @@ a {
 
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3,1fr);
   gap: 16px;
 }
 
 .service-card {
-  min-height: 250px;
-  padding: 28px;
   background: var(--paper);
+  padding: 30px;
   border: 1px solid #e1e2dc;
   border-radius: 14px;
+  min-height: 250px;
 }
 
 .service-card h3,
@@ -362,97 +354,115 @@ a {
 
 .project-list {
   display: grid;
-  gap: 26px;
+  gap: 28px;
 }
 
 .project-card {
   width: 100%;
   overflow: hidden;
-  background: white;
   border: 1px solid var(--line);
   border-radius: 16px;
-  box-shadow: 0 8px 30px rgba(31, 54, 43, 0.07);
+  background: white;
+  box-shadow: 0 8px 30px rgba(31,54,43,.07);
 }
 
 
-/* SYCAMORE - BETTER CROPPING */
+/* SYCAMORE GALLERY */
+/* ALL 4 PHOTOS SAME SIZE */
 
 .gallery-four {
   width: 100%;
-  height: 260px;
+  height: 220px;
+
   display: grid;
-  grid-template-columns: 1.45fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
+
   gap: 5px;
+
   overflow: hidden;
   background: #e5e8e5;
 }
 
 .gallery-four img {
   width: 100%;
-  height: 100%;
-  min-width: 0;
+  height: 220px;
+
   object-fit: cover;
+  object-position: center;
+
+  min-width: 0;
 }
 
+
+/* IMPORTANT:
+   REMOVE ALL OLD nth-child GRID RULES */
+
+.gallery-four img:nth-child(1),
+.gallery-four img:nth-child(2),
+.gallery-four img:nth-child(3),
+.gallery-four img:nth-child(4) {
+  grid-column: auto;
+  grid-row: auto;
+}
+
+
+/* POSITION EACH SYCAMORE PHOTO */
+
 .gallery-four img:nth-child(1) {
-  grid-column: 1;
-  grid-row: 1 / 3;
-  object-position: center 68%;
+  object-position: center 72%;
 }
 
 .gallery-four img:nth-child(2) {
-  grid-column: 2;
-  grid-row: 1;
-  object-position: center 62%;
-}
-
-.gallery-four img:nth-child(3) {
-  grid-column: 3;
-  grid-row: 1;
-  object-position: center 60%;
-}
-
-.gallery-four img:nth-child(4) {
-  grid-column: 2 / 4;
-  grid-row: 2;
   object-position: center 65%;
 }
 
+.gallery-four img:nth-child(3) {
+  object-position: center 62%;
+}
 
-/* AMHERSTBURG - 8 PHOTO GRID */
+.gallery-four img:nth-child(4) {
+  object-position: center 68%;
+}
+
+
+/* AMHERSTBURG GALLERY */
 
 .gallery-eight {
   width: 100%;
+
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(4,1fr);
   grid-auto-rows: 140px;
+
   gap: 5px;
   overflow: hidden;
+
   background: #e5e8e5;
 }
 
 .gallery-eight img {
   width: 100%;
   height: 140px;
+
   min-width: 0;
+
   object-fit: cover;
   object-position: center;
 }
 
 
-/* PROJECT CONTENT */
+/* PROJECT TEXT */
 
 .project-body {
   padding: 24px 30px 26px;
 }
 
 .project-type {
-  margin: 0 0 5px;
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.15em;
+  letter-spacing: .15em;
   color: var(--sage);
+  margin: 0 0 5px;
 }
 
 .project-body h3 {
@@ -468,6 +478,7 @@ a {
 .project-body ul {
   margin: 12px 0 0;
   padding-left: 20px;
+
   columns: 2;
   column-gap: 50px;
 }
@@ -478,15 +489,18 @@ a {
 }
 
 
-/* PLACEHOLDER */
+/* PROJECT PLACEHOLDER */
 
 .project-placeholder {
   height: 180px;
   padding: 22px;
+
   display: flex;
   align-items: end;
+
   color: white;
   font-weight: 700;
+
   background: linear-gradient(
     135deg,
     #9aa69e,
@@ -495,7 +509,7 @@ a {
 }
 
 
-/* OWNERS */
+/* OWNER SECTION */
 
 .dark {
   background: var(--forest);
@@ -514,21 +528,21 @@ a {
 
 .checklist div {
   padding: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255,255,255,.16);
   border-radius: 10px;
 }
 
-.checklist div::before {
+.checklist div:before {
   content: "✓";
   margin-right: 10px;
 }
 
 
-/* TENANTS */
+/* TENANT */
 
 .tenant-panel {
-  padding: 38px;
   background: var(--cream);
+  padding: 38px;
   border-radius: 16px;
 }
 
@@ -536,15 +550,15 @@ a {
 /* PROCESS */
 
 .process-grid {
-  margin-top: 36px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4,1fr);
   gap: 16px;
+  margin-top: 36px;
 }
 
 .process-grid > div {
-  padding: 24px 4px;
   border-top: 2px solid var(--forest);
+  padding: 24px 4px;
 }
 
 .process-grid strong {
@@ -561,7 +575,7 @@ a {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
+  grid-template-columns: .8fr 1.2fr;
   gap: 70px;
 }
 
@@ -575,18 +589,18 @@ a {
 }
 
 .contact-form {
-  padding: 34px;
   background: white;
-  border: 1px solid var(--line);
+  padding: 34px;
   border-radius: 16px;
-  box-shadow: 0 8px 30px rgba(20, 38, 29, 0.06);
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 30px rgba(20,38,29,.06);
 }
 
 label {
   display: block;
-  margin-bottom: 15px;
   font-size: 13px;
   font-weight: 700;
+  margin-bottom: 15px;
 }
 
 input,
@@ -594,11 +608,14 @@ select,
 textarea {
   width: 100%;
   margin-top: 7px;
-  padding: 13px 14px;
+
   border: 1px solid #cfd5d1;
   border-radius: 8px;
-  background: white;
+
+  padding: 13px 14px;
+
   font: 15px "DM Sans", sans-serif;
+  background: white;
 }
 
 textarea {
@@ -619,9 +636,9 @@ textarea {
 /* FOOTER */
 
 .site-footer {
-  padding: 62px 0 20px;
   background: #111a16;
   color: #c9d0cc;
+  padding: 62px 0 20px;
 }
 
 .footer-grid {
@@ -643,9 +660,12 @@ textarea {
 .footer-bottom {
   margin-top: 50px;
   padding-top: 20px;
+
+  border-top: 1px solid rgba(255,255,255,.12);
+
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+
   font-size: 12px;
 }
 
@@ -660,16 +680,16 @@ textarea {
 
   .main-nav {
     display: none;
+
     position: absolute;
-    top: 72px;
     left: 20px;
     right: 20px;
-    padding: 18px;
-    flex-direction: column;
+    top: 72px;
+
     background: var(--paper);
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    box-shadow: var(--shadow);
+    padding: 18px;
+
+    flex-direction: column;
   }
 
   .main-nav.open {
@@ -690,42 +710,29 @@ textarea {
     grid-template-columns: 1fr 1fr;
   }
 
+
+  /* SYCAMORE TABLET */
+
   .gallery-four {
     height: auto;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 190px 120px 120px;
   }
 
-  .gallery-four img:nth-child(1) {
-    grid-column: 1 / 3;
-    grid-row: 1;
-    object-position: center 70%;
+  .gallery-four img {
+    height: 180px;
   }
 
-  .gallery-four img:nth-child(2) {
-    grid-column: 1;
-    grid-row: 2;
-  }
 
-  .gallery-four img:nth-child(3) {
-    grid-column: 2;
-    grid-row: 2;
-  }
-
-  .gallery-four img:nth-child(4) {
-    grid-column: 1 / 3;
-    grid-row: 3;
-  }
+  /* AMHERSTBURG TABLET */
 
   .gallery-eight {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-auto-rows: 125px;
+    grid-template-columns: repeat(2,1fr);
+    grid-auto-rows: 130px;
   }
 
   .gallery-eight img {
-    height: 125px;
+    height: 130px;
   }
-
 }
 
 
@@ -734,20 +741,7 @@ textarea {
 @media (max-width: 620px) {
 
   .container {
-    width: min(100% - 28px, 1180px);
-  }
-
-  .nav-wrap {
-    min-height: 72px;
-  }
-
-  .brand-mark {
-    width: 42px;
-    height: 42px;
-  }
-
-  .brand-copy strong {
-    font-size: 21px;
+    width: min(100% - 28px,1180px);
   }
 
   .hero {
@@ -756,10 +750,6 @@ textarea {
 
   .hero h1 {
     font-size: 45px;
-  }
-
-  .hero-lead {
-    font-size: 17px;
   }
 
   .hero-card {
@@ -778,10 +768,6 @@ textarea {
     display: block;
   }
 
-  .section-heading-row > p {
-    margin-top: 18px;
-  }
-
   .service-grid,
   .process-grid,
   .checklist,
@@ -790,19 +776,29 @@ textarea {
     grid-template-columns: 1fr;
   }
 
+
+  /* SYCAMORE MOBILE */
+
   .gallery-four {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 165px 105px 105px;
   }
+
+  .gallery-four img {
+    height: 135px;
+  }
+
+
+  /* AMHERSTBURG MOBILE */
 
   .gallery-eight {
     grid-template-columns: 1fr 1fr;
-    grid-auto-rows: 105px;
+    grid-auto-rows: 110px;
   }
 
   .gallery-eight img {
-    height: 105px;
+    height: 110px;
   }
+
 
   .project-body {
     padding: 20px;
@@ -821,8 +817,7 @@ textarea {
   }
 
   .footer-bottom {
-    flex-direction: column;
     gap: 20px;
+    flex-direction: column;
   }
-
 }
