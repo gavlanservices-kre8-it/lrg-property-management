@@ -6,7 +6,7 @@
   --paper: #fffdf8;
   --line: #d9ddd8;
   --text: #34413b;
-  --white: #fff;
+  --white: #ffffff;
   --shadow: 0 18px 55px rgba(31, 54, 43, 0.12);
 }
 
@@ -20,6 +20,7 @@ html {
 
 body {
   margin: 0;
+  overflow-x: hidden;
   font-family: "DM Sans", sans-serif;
   color: var(--text);
   background: var(--paper);
@@ -38,19 +39,17 @@ a {
 
 .container {
   width: min(1180px, calc(100% - 40px));
-  margin: auto;
+  margin: 0 auto;
 }
 
 
-/* =========================================
-   HEADER
-========================================= */
+/* HEADER */
 
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 100;
-  background: rgba(255, 253, 248, 0.93);
+  z-index: 1000;
+  background: rgba(255, 253, 248, 0.94);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(24, 32, 28, 0.08);
 }
@@ -81,7 +80,7 @@ a {
 .brand-mark svg {
   width: 37px;
   height: 37px;
-  fill: var(--white);
+  fill: white;
 }
 
 .brand-copy {
@@ -97,10 +96,10 @@ a {
 }
 
 .brand-copy small {
-  text-transform: uppercase;
+  margin-top: 5px;
   font-size: 9px;
   letter-spacing: 0.18em;
-  margin-top: 5px;
+  text-transform: uppercase;
   color: #6f7b74;
 }
 
@@ -112,19 +111,15 @@ a {
   font-weight: 600;
 }
 
-.main-nav a {
-  transition: opacity 0.2s ease;
-}
-
 .main-nav a:hover {
   opacity: 0.7;
 }
 
 .nav-cta {
-  background: var(--forest);
-  color: white !important;
   padding: 12px 17px;
   border-radius: 8px;
+  background: var(--forest);
+  color: white !important;
 }
 
 .menu-toggle {
@@ -136,9 +131,7 @@ a {
 }
 
 
-/* =========================================
-   HERO
-========================================= */
+/* HERO */
 
 .hero {
   padding: 76px 0 72px;
@@ -157,10 +150,10 @@ a {
 }
 
 .eyebrow {
+  margin: 0 0 18px;
   font: 700 12px "Manrope", sans-serif;
   letter-spacing: 0.16em;
   color: var(--sage);
-  margin: 0 0 18px;
 }
 
 .hero h1,
@@ -171,9 +164,9 @@ a {
 }
 
 .hero h1 {
+  margin: 0;
   font-size: clamp(44px, 6vw, 76px);
   line-height: 1.02;
-  margin: 0;
 }
 
 .hero h1 span {
@@ -181,8 +174,8 @@ a {
 }
 
 .hero-lead {
-  font-size: 19px;
   margin: 28px 0 30px;
+  font-size: 19px;
 }
 
 .hero-actions {
@@ -198,17 +191,9 @@ a {
   min-height: 50px;
   padding: 0 20px;
   border-radius: 8px;
-  font-weight: 700;
   border: 1px solid transparent;
   cursor: pointer;
-  transition:
-    transform 0.2s ease,
-    opacity 0.2s ease;
-}
-
-.button:hover {
-  transform: translateY(-1px);
-  opacity: 0.92;
+  font-weight: 700;
 }
 
 .button.primary {
@@ -236,18 +221,18 @@ a {
 }
 
 
-/* HERO PROPERTY CARD */
+/* HERO CARD */
 
 .hero-card {
-  background: var(--forest);
-  color: white;
-  padding: 30px;
-  border-radius: 24px;
-  box-shadow: var(--shadow);
   min-height: 480px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background: var(--forest);
+  color: white;
+  border-radius: 24px;
+  box-shadow: var(--shadow);
 }
 
 .hero-card-top {
@@ -274,11 +259,11 @@ a {
 .house-body {
   width: 210px;
   height: 120px;
-  background: #f5f2ea;
+  padding: 25px;
   display: flex;
   align-items: end;
   justify-content: space-around;
-  padding: 25px;
+  background: #f5f2ea;
 }
 
 .house-body span {
@@ -294,8 +279,8 @@ a {
 }
 
 .hero-stats div {
-  border-top: 1px solid rgba(255, 255, 255, 0.25);
   padding-top: 13px;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .hero-stats strong,
@@ -304,9 +289,7 @@ a {
 }
 
 
-/* =========================================
-   GENERAL SECTIONS
-========================================= */
+/* GENERAL */
 
 .section {
   padding: 92px 0;
@@ -319,9 +302,9 @@ a {
 }
 
 .section h2 {
+  margin: 0;
   font-size: clamp(34px, 4.4vw, 54px);
   line-height: 1.08;
-  margin: 0;
 }
 
 .lead-copy {
@@ -333,11 +316,11 @@ a {
 }
 
 .section-heading-row {
+  margin-bottom: 36px;
   display: flex;
   justify-content: space-between;
-  gap: 40px;
   align-items: end;
-  margin-bottom: 36px;
+  gap: 40px;
 }
 
 .section-heading-row h2 {
@@ -349,9 +332,7 @@ a {
 }
 
 
-/* =========================================
-   SERVICES
-========================================= */
+/* SERVICES */
 
 .service-grid {
   display: grid;
@@ -360,11 +341,11 @@ a {
 }
 
 .service-card {
-  background: var(--paper);
+  min-height: 260px;
   padding: 30px;
+  background: var(--paper);
   border: 1px solid #e1e2dc;
   border-radius: 14px;
-  min-height: 260px;
 }
 
 .service-card h3,
@@ -377,156 +358,104 @@ a {
 }
 
 
-/* =========================================
-   PROJECTS
-========================================= */
+/* PROJECTS */
 
-.project-grid {
+.project-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
-  align-items: start;
+  gap: 32px;
 }
 
 .project-card {
-  border: 1px solid var(--line);
-  border-radius: 16px;
+  width: 100%;
   overflow: hidden;
   background: white;
-  box-shadow: 0 8px 30px rgba(31, 54, 43, 0.06);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(31, 54, 43, 0.07);
 }
 
 .featured-project {
-  grid-column: 1 / -1;
+  width: 100%;
 }
 
 
-/* =========================================
-   SYCAMORE 4-PHOTO GALLERY
-========================================= */
+/* SYCAMORE */
 
-.project-gallery {
+.gallery-four {
+  width: 100%;
+  height: 430px;
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  grid-template-rows: 210px 210px;
+  grid-template-rows: 1fr 1fr;
   gap: 6px;
-  background: #e6e8e4;
+  overflow: hidden;
+  background: #e5e8e5;
 }
 
-.project-gallery img {
+.gallery-four img {
   width: 100%;
   height: 100%;
+  min-width: 0;
   object-fit: cover;
 }
 
-.project-gallery img:first-child {
-  grid-row: 1 / 3;
+.gallery-four img:nth-child(1) {
   grid-column: 1;
+  grid-row: 1 / 3;
 }
 
-.project-gallery img:nth-child(2) {
+.gallery-four img:nth-child(2) {
   grid-column: 2;
   grid-row: 1;
 }
 
-.project-gallery img:nth-child(3) {
+.gallery-four img:nth-child(3) {
   grid-column: 3;
   grid-row: 1;
 }
 
-.project-gallery img:nth-child(4) {
+.gallery-four img:nth-child(4) {
   grid-column: 2 / 4;
   grid-row: 2;
 }
 
 
-/* =========================================
-   AMHERSTBURG CRAWLSPACE
-   8-PHOTO GALLERY
-========================================= */
+/* AMHERSTBURG */
 
-.project-gallery-eight {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 230px 230px;
-  gap: 6px;
-  background: #e6e8e4;
-  overflow: hidden;
-}
-
-.project-gallery-eight img {
+.gallery-eight {
   width: 100%;
-  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: 220px;
+  gap: 6px;
+  overflow: hidden;
+  background: #e5e8e5;
+}
+
+.gallery-eight img {
+  width: 100%;
+  height: 220px;
+  min-width: 0;
   object-fit: cover;
-
-  /* Override the Sycamore gallery positioning */
-  grid-column: auto !important;
-  grid-row: auto !important;
-
-  transition:
-    transform 0.3s ease,
-    filter 0.3s ease;
-}
-
-.project-gallery-eight img:hover {
-  transform: scale(1.025);
-  filter: brightness(0.94);
 }
 
 
-/* =========================================
-   OTHER PROJECT PLACEHOLDERS
-========================================= */
-
-.project-image {
-  height: 260px;
-  display: flex;
-  align-items: end;
-  padding: 24px;
-  color: white;
-  font-weight: 700;
-}
-
-.project-two {
-  background: linear-gradient(
-    135deg,
-    #d2c8b7,
-    #6d8074
-  );
-}
-
-.project-three {
-  background: linear-gradient(
-    135deg,
-    #9aa69e,
-    #243f34
-  );
-}
-
-
-/* PROJECT TEXT */
+/* PROJECT CONTENT */
 
 .project-body {
-  padding: 28px;
-}
-
-.featured-project .project-body {
   padding: 32px;
 }
 
 .project-type {
+  margin: 0 0 5px;
   font-size: 10px;
+  font-weight: 700;
   letter-spacing: 0.15em;
   color: var(--sage);
-  font-weight: 700;
 }
 
 .project-body h3 {
-  margin-top: 5px;
-  margin-bottom: 12px;
-}
-
-.featured-project .project-body h3 {
+  margin: 5px 0 12px;
   font-size: 28px;
 }
 
@@ -535,10 +464,10 @@ a {
 }
 
 .project-body ul {
-  padding-left: 20px;
   margin-bottom: 0;
+  padding-left: 20px;
   columns: 2;
-  column-gap: 40px;
+  column-gap: 50px;
 }
 
 .project-body li {
@@ -547,9 +476,24 @@ a {
 }
 
 
-/* =========================================
-   OWNERS
-========================================= */
+/* PLACEHOLDER */
+
+.project-placeholder {
+  height: 260px;
+  padding: 24px;
+  display: flex;
+  align-items: end;
+  color: white;
+  font-weight: 700;
+  background: linear-gradient(
+    135deg,
+    #9aa69e,
+    #243f34
+  );
+}
+
+
+/* OWNERS */
 
 .dark {
   background: var(--forest);
@@ -578,31 +522,27 @@ a {
 }
 
 
-/* =========================================
-   TENANTS
-========================================= */
+/* TENANTS */
 
 .tenant-panel {
-  background: var(--cream);
   padding: 38px;
+  background: var(--cream);
   border-radius: 16px;
 }
 
 
-/* =========================================
-   PROCESS
-========================================= */
+/* PROCESS */
 
 .process-grid {
+  margin-top: 36px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
-  margin-top: 36px;
 }
 
 .process-grid > div {
-  border-top: 2px solid var(--forest);
   padding: 24px 4px;
+  border-top: 2px solid var(--forest);
 }
 
 .process-grid strong {
@@ -611,9 +551,7 @@ a {
 }
 
 
-/* =========================================
-   CONTACT
-========================================= */
+/* CONTACT */
 
 .contact {
   background: #eef1ed;
@@ -635,18 +573,18 @@ a {
 }
 
 .contact-form {
-  background: white;
   padding: 34px;
-  border-radius: 16px;
+  background: white;
   border: 1px solid var(--line);
+  border-radius: 16px;
   box-shadow: 0 8px 30px rgba(20, 38, 29, 0.06);
 }
 
 label {
   display: block;
+  margin-bottom: 15px;
   font-size: 13px;
   font-weight: 700;
-  margin-bottom: 15px;
 }
 
 input,
@@ -654,18 +592,11 @@ select,
 textarea {
   width: 100%;
   margin-top: 7px;
+  padding: 13px 14px;
   border: 1px solid #cfd5d1;
   border-radius: 8px;
-  padding: 13px 14px;
+  background: white;
   font: 15px "DM Sans", sans-serif;
-  background: #fff;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-  outline: 2px solid rgba(33, 63, 51, 0.18);
-  border-color: var(--forest);
 }
 
 textarea {
@@ -683,14 +614,12 @@ textarea {
 }
 
 
-/* =========================================
-   FOOTER
-========================================= */
+/* FOOTER */
 
 .site-footer {
+  padding: 62px 0 20px;
   background: #111a16;
   color: #c9d0cc;
-  padding: 62px 0 20px;
 }
 
 .footer-grid {
@@ -712,16 +641,14 @@ textarea {
 .footer-bottom {
   margin-top: 50px;
   padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
   display: flex;
   justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   font-size: 12px;
 }
 
 
-/* =========================================
-   TABLET
-========================================= */
+/* TABLET */
 
 @media (max-width: 900px) {
 
@@ -732,12 +659,12 @@ textarea {
   .main-nav {
     display: none;
     position: absolute;
+    top: 72px;
     left: 20px;
     right: 20px;
-    top: 72px;
-    background: var(--paper);
     padding: 18px;
     flex-direction: column;
+    background: var(--paper);
     border: 1px solid var(--line);
     border-radius: 12px;
     box-shadow: var(--shadow);
@@ -757,66 +684,49 @@ textarea {
     grid-template-columns: 1fr 1fr;
   }
 
-  .project-grid {
-    grid-template-columns: 1fr;
+  .process-grid {
+    grid-template-columns: 1fr 1fr;
   }
 
-  .featured-project {
-    grid-column: auto;
-  }
-
-
-  /* Sycamore */
-
-  .project-gallery {
+  .gallery-four {
+    height: auto;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 260px 180px 180px;
   }
 
-  .project-gallery img:first-child {
+  .gallery-four img:nth-child(1) {
     grid-column: 1 / 3;
     grid-row: 1;
   }
 
-  .project-gallery img:nth-child(2) {
+  .gallery-four img:nth-child(2) {
     grid-column: 1;
     grid-row: 2;
   }
 
-  .project-gallery img:nth-child(3) {
+  .gallery-four img:nth-child(3) {
     grid-column: 2;
     grid-row: 2;
   }
 
-  .project-gallery img:nth-child(4) {
+  .gallery-four img:nth-child(4) {
     grid-column: 1 / 3;
     grid-row: 3;
   }
 
-
-  /* Amherstburg */
-
-  .project-gallery-eight {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 190px);
+  .gallery-eight {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 190px;
   }
 
-  .project-gallery-eight img {
-    grid-column: auto !important;
-    grid-row: auto !important;
-  }
-
-
-  .process-grid {
-    grid-template-columns: 1fr 1fr;
+  .gallery-eight img {
+    height: 190px;
   }
 
 }
 
 
-/* =========================================
-   MOBILE
-========================================= */
+/* MOBILE */
 
 @media (max-width: 620px) {
 
@@ -831,11 +741,6 @@ textarea {
   .brand-mark {
     width: 42px;
     height: 42px;
-  }
-
-  .brand-mark svg {
-    width: 32px;
-    height: 32px;
   }
 
   .brand-copy strong {
@@ -858,17 +763,6 @@ textarea {
     min-height: 340px;
   }
 
-  .roof {
-    border-left-width: 95px;
-    border-right-width: 95px;
-    border-bottom-width: 75px;
-  }
-
-  .house-body {
-    width: 170px;
-    height: 105px;
-  }
-
   .section {
     padding: 68px 0;
   }
@@ -886,7 +780,6 @@ textarea {
   }
 
   .service-grid,
-  .project-grid,
   .process-grid,
   .checklist,
   .form-row,
@@ -894,54 +787,25 @@ textarea {
     grid-template-columns: 1fr;
   }
 
-
-  /* Sycamore mobile gallery */
-
-  .project-gallery {
-    display: grid;
+  .gallery-four {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 230px 150px 150px;
+    grid-template-rows: 220px 140px 140px;
   }
 
-  .project-gallery img:first-child {
-    grid-column: 1 / 3;
-    grid-row: 1;
-  }
-
-  .project-gallery img:nth-child(2) {
-    grid-column: 1;
-    grid-row: 2;
-  }
-
-  .project-gallery img:nth-child(3) {
-    grid-column: 2;
-    grid-row: 2;
-  }
-
-  .project-gallery img:nth-child(4) {
-    grid-column: 1 / 3;
-    grid-row: 3;
-  }
-
-
-  /* Amherstburg mobile gallery */
-
-  .project-gallery-eight {
+  .gallery-eight {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(4, 150px);
+    grid-auto-rows: 145px;
   }
 
-  .project-gallery-eight img {
-    grid-column: auto !important;
-    grid-row: auto !important;
+  .gallery-eight img {
+    height: 145px;
   }
 
-
-  .featured-project .project-body {
+  .project-body {
     padding: 24px;
   }
 
-  .featured-project .project-body h3 {
+  .project-body h3 {
     font-size: 23px;
   }
 
@@ -949,13 +813,13 @@ textarea {
     columns: 1;
   }
 
-  .footer-bottom {
-    gap: 20px;
-    flex-direction: column;
-  }
-
   .contact-form {
     padding: 22px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 20px;
   }
 
 }
