@@ -42,7 +42,9 @@ a {
 }
 
 
-/* HEADER */
+/* =========================================
+   HEADER
+========================================= */
 
 .site-header {
   position: sticky;
@@ -134,11 +136,17 @@ a {
 }
 
 
-/* HERO */
+/* =========================================
+   HERO
+========================================= */
 
 .hero {
   padding: 76px 0 72px;
-  background: linear-gradient(135deg, #f7f4ed 0%, #eef2ec 100%);
+  background: linear-gradient(
+    135deg,
+    #f7f4ed 0%,
+    #eef2ec 100%
+  );
 }
 
 .hero-grid {
@@ -227,6 +235,9 @@ a {
   margin-right: 7px;
 }
 
+
+/* HERO PROPERTY CARD */
+
 .hero-card {
   background: var(--forest);
   color: white;
@@ -293,7 +304,9 @@ a {
 }
 
 
-/* GENERAL SECTIONS */
+/* =========================================
+   GENERAL SECTIONS
+========================================= */
 
 .section {
   padding: 92px 0;
@@ -336,7 +349,9 @@ a {
 }
 
 
-/* SERVICES */
+/* =========================================
+   SERVICES
+========================================= */
 
 .service-grid {
   display: grid;
@@ -362,12 +377,14 @@ a {
 }
 
 
-/* PROJECTS */
+/* =========================================
+   PROJECTS
+========================================= */
 
 .project-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 22px;
+  gap: 28px;
   align-items: start;
 }
 
@@ -382,6 +399,11 @@ a {
 .featured-project {
   grid-column: 1 / -1;
 }
+
+
+/* =========================================
+   SYCAMORE 4-PHOTO GALLERY
+========================================= */
 
 .project-gallery {
   display: grid;
@@ -417,6 +439,45 @@ a {
   grid-row: 2;
 }
 
+
+/* =========================================
+   AMHERSTBURG CRAWLSPACE
+   8-PHOTO GALLERY
+========================================= */
+
+.project-gallery-eight {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 230px 230px;
+  gap: 6px;
+  background: #e6e8e4;
+  overflow: hidden;
+}
+
+.project-gallery-eight img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  /* Override the Sycamore gallery positioning */
+  grid-column: auto !important;
+  grid-row: auto !important;
+
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+.project-gallery-eight img:hover {
+  transform: scale(1.025);
+  filter: brightness(0.94);
+}
+
+
+/* =========================================
+   OTHER PROJECT PLACEHOLDERS
+========================================= */
+
 .project-image {
   height: 260px;
   display: flex;
@@ -427,12 +488,23 @@ a {
 }
 
 .project-two {
-  background: linear-gradient(135deg, #d2c8b7, #6d8074);
+  background: linear-gradient(
+    135deg,
+    #d2c8b7,
+    #6d8074
+  );
 }
 
 .project-three {
-  background: linear-gradient(135deg, #9aa69e, #243f34);
+  background: linear-gradient(
+    135deg,
+    #9aa69e,
+    #243f34
+  );
 }
+
+
+/* PROJECT TEXT */
 
 .project-body {
   padding: 28px;
@@ -458,17 +530,26 @@ a {
   font-size: 28px;
 }
 
+.project-body p {
+  max-width: 900px;
+}
+
 .project-body ul {
   padding-left: 20px;
   margin-bottom: 0;
+  columns: 2;
+  column-gap: 40px;
 }
 
 .project-body li {
   margin-bottom: 6px;
+  break-inside: avoid;
 }
 
 
-/* OWNERS */
+/* =========================================
+   OWNERS
+========================================= */
 
 .dark {
   background: var(--forest);
@@ -497,7 +578,9 @@ a {
 }
 
 
-/* TENANTS */
+/* =========================================
+   TENANTS
+========================================= */
 
 .tenant-panel {
   background: var(--cream);
@@ -506,7 +589,9 @@ a {
 }
 
 
-/* PROCESS */
+/* =========================================
+   PROCESS
+========================================= */
 
 .process-grid {
   display: grid;
@@ -526,7 +611,9 @@ a {
 }
 
 
-/* CONTACT */
+/* =========================================
+   CONTACT
+========================================= */
 
 .contact {
   background: #eef1ed;
@@ -574,6 +661,13 @@ textarea {
   background: #fff;
 }
 
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid rgba(33, 63, 51, 0.18);
+  border-color: var(--forest);
+}
+
 textarea {
   resize: vertical;
 }
@@ -589,7 +683,9 @@ textarea {
 }
 
 
-/* FOOTER */
+/* =========================================
+   FOOTER
+========================================= */
 
 .site-footer {
   background: #111a16;
@@ -623,7 +719,9 @@ textarea {
 }
 
 
-/* TABLET */
+/* =========================================
+   TABLET
+========================================= */
 
 @media (max-width: 900px) {
 
@@ -667,6 +765,9 @@ textarea {
     grid-column: auto;
   }
 
+
+  /* Sycamore */
+
   .project-gallery {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 260px 180px 180px;
@@ -692,13 +793,30 @@ textarea {
     grid-row: 3;
   }
 
+
+  /* Amherstburg */
+
+  .project-gallery-eight {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 190px);
+  }
+
+  .project-gallery-eight img {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+
   .process-grid {
     grid-template-columns: 1fr 1fr;
   }
+
 }
 
 
-/* MOBILE */
+/* =========================================
+   MOBILE
+========================================= */
 
 @media (max-width: 620px) {
 
@@ -713,6 +831,11 @@ textarea {
   .brand-mark {
     width: 42px;
     height: 42px;
+  }
+
+  .brand-mark svg {
+    width: 32px;
+    height: 32px;
   }
 
   .brand-copy strong {
@@ -771,6 +894,9 @@ textarea {
     grid-template-columns: 1fr;
   }
 
+
+  /* Sycamore mobile gallery */
+
   .project-gallery {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -797,12 +923,30 @@ textarea {
     grid-row: 3;
   }
 
+
+  /* Amherstburg mobile gallery */
+
+  .project-gallery-eight {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 150px);
+  }
+
+  .project-gallery-eight img {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+
   .featured-project .project-body {
     padding: 24px;
   }
 
   .featured-project .project-body h3 {
     font-size: 23px;
+  }
+
+  .project-body ul {
+    columns: 1;
   }
 
   .footer-bottom {
@@ -813,4 +957,5 @@ textarea {
   .contact-form {
     padding: 22px;
   }
+
 }
